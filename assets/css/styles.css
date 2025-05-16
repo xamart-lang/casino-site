@@ -305,7 +305,7 @@ button:hover, .popup-box button:hover {
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
     .container {
         padding: 25px;
     }
