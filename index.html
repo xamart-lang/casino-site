@@ -167,7 +167,7 @@ function verifyAge(isOfAge) {
                     if (href && !href.startsWith("#") && !href.startsWith("http")) {
                         e.preventDefault();
         
-                        document.body.classList.add("page-transition");
+                        this.classList.add("page-transition");
         
                         setTimeout(() => {
                             window.location.href = href;
