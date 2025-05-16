@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/fontawesome-free-6.7.2-web/css/all.min.css">
+
+</head>
+
+<body>
+    <div id="age-popup" class="popup-overlay">
+        <div class="popup-box">
+            <h2>Are you 18 or older?</h2>
+            <button onclick="verifyAge(true)">Yes</button>
+            <button onclick="verifyAge(false)">No</button>
+        </div>
+    </div>      
+    <header>
+    <div class="container navigation">
+        <div class="navbar">
+            <div class="logo">
+                <img src="assets/images/logotemp.png" width="70px">
+            </div>
+            <i class="fa-solid fa-burger menu-icon" onclick="menutoggle()"></i>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="#home">Home <i class="fa-solid fa-house hover"></i></a></li>
+                    <li><a href="#about">About Gambling <i class="fa-solid fa-book-open hover"></i></a></li>
+                    <li><a href="shop.html">Marketplace <i class="fa-solid fa-store hover"></i></a></li>
+                    <li><a href="games.html">Start Winning <i class="fa-solid fa-sack-dollar hover"></i></a></li>
+                    <li><a href="support.html">Support <i class="fa-solid fa-circle-info hover"></i></a></li>
+                    <li><a href="account.html">Account <i class="fa-solid fa-user hover"></i></a></li> 
+                </ul>
+            </nav>
+        </div>
+    </div>
+    </header>
+    
+
+    <div class="container hero" id="home">
+        <div class="row">
+            <div class="col-2">
+                <h1>Guaranteed Winnings!</h1>
+                <p>You can only loose 100% but win so much more.
+                <br>It's simple Math!
+                </p>
+                <a href="games.html" class="button hover">&#9733; Start Winning now! &#9733;</a>
+            </div>
+            <div class="col-2">
+                <a href="games.html" class = 'rotation-link'>
+                <img src="assets/images/rowimgtemp.png">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!------- About Gambling ------->
+    <div class="container about">
+        <h2 class="title" id = "about"> About Gambling</h2>
+        <div class="row">
+            <a href="about.html">
+            <div class="col-3 bg-box">
+                <h1>The 10 best reasons why you should Gamble!!!</h1>
+            </div>
+            </a>
+            <a href="about.html">
+            <div class="col-3 bg-box">
+                <h1>Dangers of Gambling</h1>
+            </div>
+            </a>
+            <a href="about.html">
+            <div class="col-3 bg-box">
+                <h1>How to win at Gambling</h1>
+            </div>
+            </a>
+        </div>
+    </div>
+    <div class="container dice">
+        <h2 class="title">Popular Dice Skins</h2>
+        <div class="scrollmenu">
+            <div class="card hover">
+                <img src="assets/images/dice/1.png">
+                <h1>Dice Skin 1</h1>
+                <p>Price: $0.99</p>
+                <button class="buy hover">Buy Now!</button>
+            </div>
+            <div class="card hover">
+                <img src="assets/images/dice/2.png">
+                <h1>Dice Skin 2</h1>
+                <p>Price: $0.99</p>
+                <button class="buy hover">Buy Now!</button>
+            </div>
+            <div class="card hover">
+                <img src="assets/images/dice/3.png">
+                <h1>Dice Skin 3</h1>
+                <p>Price: $0.99</p>
+                <button class="buy hover">Buy Now!</button>
+            </div>
+            <div class="card hover">
+                <img src="assets/images/dice/4.png">
+                <h1>Dice Skin 4</h1>
+                <p>Price: $0.99</p>
+                <button class="buy hover">Buy Now!</button>
+            </div>
+            <div class="card hover">
+                <img src="assets/images/dice/5.png">
+                <h1>Dice Skin 5</h1>
+                <p>Price: $0.99</p>
+                <button class="buy hover">Buy Now!</button>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-------- js ------->
+    <script src="/assets/js/toggle_menu.js"></script>
+    <script src="/assets/js/age-check.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll("a.rotation-link");
+        
+            links.forEach(link => {
+                link.addEventListener("click", function(e) {
+                    // Only apply transition for internal links
+                    const href = link.getAttribute("href");
+                    if (href && !href.startsWith("#") && !href.startsWith("http")) {
+                        e.preventDefault();
+        
+                        document.body.classList.add("page-transition");
+        
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 600); // match animation duration
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

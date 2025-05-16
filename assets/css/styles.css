@@ -1,0 +1,342 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GENERAL STYLES */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: goldenrod;
+    background: #269213 url(../images/felt_text.jpeg);
+    background-blend-mode: multiply;
+    background-repeat: repeat;
+}
+
+a {
+    text-decoration: none;
+    color: goldenrod;
+}
+
+p, h1 {
+    color: goldenrod;
+}
+
+/* CONTAINER */
+.container {
+    width: 100vw;
+    margin: auto;
+    padding: 25px 100px;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    background-color: #465316;
+    background-image: url(../images/wood_text.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-repeat: repeat;
+}
+
+.container.navigation {
+    padding: 0;
+}
+
+.container.hero {
+    padding-top: 100px;
+}
+
+/* NAVIGATION */
+.navbar {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+    align-items: center;
+}
+
+nav ul {
+    display: inline-block;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    color: white;
+}
+
+.fa-solid.menu-icon {
+    width: 28px;
+    margin-left: 20px;
+    display: none;
+    font-size: 24px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* ROW & COLUMN LAYOUT */
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: left;
+}
+
+.col-2 {
+    text-align: center;
+    align-items: center;
+    flex-basis: 50%;
+    min-width: 300px;
+    overflow: auto;
+}
+
+.col-2 h1 {
+    font-size: clamp(2rem, 6vw, 80px);
+    line-height: 1.2;
+    margin: 25px 0;
+    color: goldenrod;
+    text-shadow: -1px -1px rgb(255, 229, 162), 2px 2px 2px rgb(139, 107, 26), -2px -2px goldenrod;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.col-2 img {
+    max-width: 100%;
+    padding: 50px 0;
+}
+
+.col-3 {
+    margin-top: 20px;
+    flex-basis: 33%;
+    min-width: 300px;
+}
+
+/* TEXT STYLES */
+.container h2 {
+    position: relative;
+    font-size: clamp(1.8rem, 5vw, 45px);
+    margin: 50px 0;
+    text-align: center;
+}
+
+.container h2::after {
+    content: '';
+    background: purple;
+    width: 300px;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    transform: translateX(-50%);
+    left: 50%;
+    margin: -20px 0;
+}
+
+/* BUTTONS */
+button, .popup-box button {
+    background-color: goldenrod;
+    color: #8e0b0b;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover, .popup-box button:hover {
+    background-color: rgb(255, 203, 72);
+    color: rgb(141, 12, 12);
+}
+
+.button {
+    display: inline-block;
+    background-color: rgb(255, 0, 0);
+    margin: 30px 0;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: goldenrod;
+    color: red;
+}
+
+/* HOVER EFFECT */
+.hover:hover {
+    transform: scale(1.05);
+}
+
+/* POPUP */
+#age-popup {
+    display: none;
+}
+
+.popup-overlay {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-box {
+    background: #222;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 20px #000;
+}
+
+/* SCROLL MENU */
+.scrollmenu {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    background: #921313 url(../images/felt_text.jpeg);
+    background-blend-mode: multiply;
+    gap: 10px;
+    padding: 10px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    box-shadow: inset 4px 0 10px -4px rgba(0, 0, 0, 0.712), inset -4px 0 10px -4px rgba(0, 0, 0, 0.712);
+}
+
+.scrollmenu::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    color: gold;
+    align-items: center;
+    text-align: center;
+    flex: 0 0 33.33%;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.card p {
+    color: goldenrod;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.bg-box {
+    background: #921313 url(../images/felt_text.jpeg);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(1, 1, 1);
+    padding: 20px;
+    height: 450px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 0px;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.376);
+}
+
+.bg-box:hover {
+    background-color: #ff0000;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 900px) {
+    nav ul {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background: #ff0000;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        width: 100%;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        color: #fff;
+        display: block;
+        padding: 10px;
+    }
+
+    .fa-solid.menu-icon {
+        display: block;
+    }
+
+    .row {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 25px;
+    }
+
+    .col-2, .col-3 {
+        flex-basis: 100%;
+    }
+
+    .col-2 h1 {
+        font-size: clamp(1.5rem, 7vw, 50px);
+    }
+
+    button, .button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+
+.page-transition {
+    animation: rotateOut 0.6s forwards;
+}
+
+
+@keyframes rotateOut {
+    from {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
