@@ -268,6 +268,20 @@ button:hover, .popup-box button:hover {
     box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.376);
 }
 
+.bg-box.roulette{
+    background-color: #f500005d;
+    background-image: url(../images/roulette_icon.png);
+}
+
+.bg-box.slots{
+    background-color: #f500005d;
+    background-image: url(../images/slots-icon.png);
+}
+.bg-box.plinko{
+    background-color: #f500005d;
+    background-image: url(../images/plinko_icon.png);
+}
+
 .bg-box:hover {
     background-color: #ff0000;
 }
@@ -330,7 +344,7 @@ button:hover, .popup-box button:hover {
 }
 .rotation-link.page-transition {
     display: inline-block;
-    animation: rotateOut 0.6s forwards;
+    animation: rotate 0.6s forwards;
 }
 .fade-out-transition {
     animation: fadeOut 0.6s forwards;
@@ -339,14 +353,12 @@ button:hover, .popup-box button:hover {
     animation: fadeIn 0.6s forwards;
 }
 
-@keyframes rotateOut {
+@keyframes rotate {
     from {
         transform: rotate(0deg);
-        opacity: 1;
     }
     to {
         transform: rotate(360deg);
-        opacity: 0;
     }
 }
 @keyframes fadeOut {
