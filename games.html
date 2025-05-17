@@ -43,5 +43,13 @@
             }
         }
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (sessionStorage.getItem("animateOnLoad") === "true") {
+                document.body.classList.add("fade-in-transition");
+                sessionStorage.removeItem("animateOnLoad");
+            }
+        });
+    </script>
 </body>
 </html>

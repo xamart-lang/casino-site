@@ -166,9 +166,9 @@ function verifyAge(isOfAge) {
                     const href = link.getAttribute("href");
                     if (href && !href.startsWith("#") && !href.startsWith("http")) {
                         e.preventDefault();
-        
+                        sessionStorage.setItem("animateOnLoad", "true");
                         this.classList.add("page-transition");
-        
+                        document.body.classList.add("fade-out-transition");
                         setTimeout(() => {
                             window.location.href = href;
                         }, 600); // match animation duration
