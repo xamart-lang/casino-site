@@ -29,6 +29,38 @@
         </div>
     </div>
     </header>
+    <div class="container hero">
+        
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+            <div class="userdata">
+                <img src="assets/images/logotemp.png" alt="User Avatar" id = "profile-pic">
+                <label for="input-file" class="hover">update image</label>
+                <input type="file" accept="image/*" id="input-file">
+                <h2 class="username">Player123</h2>
+                <p class="tokens">💰 Tokens: <span id="tokenAmount">420</span></p>
+                <button class="buy hover" onclick="addTokens()">Add Tokens</button>
+            </div>
+            </div>
+            <div class="col-2">
+            <div class="equipped-section">
+                <h3>Owned Cosmetics</h3>
+                <div class="scrollmenu">
+                    <div class="card">
+                        <img src="assets/images/dice/3.png" alt="Equipped Dice Skin">
+                        <p>Dice</p>
+                    </div>
+                    <div class="card">
+                        <img src="assets/images/flairs/gold.png" alt="Equipped Flair">
+                        <p>Flair</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
     <script>
         var MenuItems = document.getElementById("MenuItems");
         
@@ -41,6 +73,29 @@
                 MenuItems.style.maxHeight = "0px";
             }
         }
+    </script>
+    <script>
+        function addTokens() {
+            let amountSpan = document.getElementById("tokenAmount");
+            let current = parseInt(amountSpan.innerText);
+            amountSpan.innerText = current + 100;
+            alert("You got 100 tokens! (Fake for now)");
+        }
+    </script>
+    <script>
+        const inputFile = document.getElementById('input-file');
+        const profilePic = document.getElementById('profile-pic');
+
+        inputFile.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    profilePic.src = event.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
     </script>
 </body>
 </html>
