@@ -37,16 +37,16 @@
             <div class="col-2">
             <div class="userdata">
                 <img src="assets/images/logotemp.png" alt="User Avatar" id = "profile-pic">
-                <label for="input-file" class="hover">update image</label>
+                <label for="input-file" class="hover">Change Picture</label>
                 <input type="file" accept="image/*" id="input-file">
-                <h2 class="username">Player123</h2>
+                <h2 id="username-display">Player#4352</h2>
                 <p class="tokens">💰 Tokens: <span id="tokenAmount">420</span></p>
                 <button class="buy hover" onclick="addTokens()">Add Tokens</button>
             </div>
             </div>
             <div class="col-2">
             <div class="equipped-section">
-                <h3>Owned Cosmetics</h3>
+                <h2>Owned Cosmetics</h2>
                 <div class="scrollmenu">
                     <div class="card">
                         <img src="assets/images/dice/3.png" alt="Equipped Dice Skin">
@@ -79,7 +79,6 @@
             let amountSpan = document.getElementById("tokenAmount");
             let current = parseInt(amountSpan.innerText);
             amountSpan.innerText = current + 100;
-            alert("You got 100 tokens! (Fake for now)");
         }
     </script>
     <script>
@@ -97,5 +96,6 @@
             }
         });
     </script>
+    
 </body>
 </html>

@@ -6,36 +6,92 @@
     <title>Casino About</title>
     <link rel="stylesheet" href="assets/css/styles.css?v=1.2.1" />
     <link rel="stylesheet" href="assets/fontawesome-free-6.7.2-web/css/all.min.css">
-
 </head>
 
 <body>
     <header>
-    <div class="container navigation">
-        <div class="navbar">
-            <div class="logo">
-                <a href="index.html"><img src="assets/images/logotemp.png" width="70px"></a>            </div>
-            <i class="fa-solid fa-burger menu-icon" onclick="menutoggle()"></i>
-            <nav>
-                <ul id="MenuItems">
-                    <li><a href="index.html">Home <i class="fa-solid fa-house hover"></i></a></li>
-                    <li><a href="about.html">About Gambling <i class="fa-solid fa-book-open hover"></i></a></li>
-                    <li><a href="shop.html">Marketplace <i class="fa-solid fa-store hover"></i></a></li>
-                    <li><a href="games.html">Start Winning <i class="fa-solid fa-sack-dollar hover"></i></a></li>
-                    <li><a href="support.html">Support <i class="fa-solid fa-circle-info hover"></i></a></li>
-                    <li><a href="account.html">Account <i class="fa-solid fa-user hover"></i></a></li> 
-                </ul>
-            </nav>
+        <div class="container navigation">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="assets/images/logotemp.png" width="70px"></a>
+                </div>
+                <i class="fa-solid fa-burger menu-icon" onclick="menutoggle()"></i>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home <i class="fa-solid fa-house hover"></i></a></li>
+                        <li><a href="about.html">About Gambling <i class="fa-solid fa-book-open hover"></i></a></li>
+                        <li><a href="shop.html">Marketplace <i class="fa-solid fa-store hover"></i></a></li>
+                        <li><a href="games.html">Start Winning <i class="fa-solid fa-sack-dollar hover"></i></a></li>
+                        <li><a href="support.html">Support <i class="fa-solid fa-circle-info hover"></i></a></li>
+                        <li><a href="account.html">Account <i class="fa-solid fa-user hover"></i></a></li> 
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="container hero"></div>
+    <!-- Article 1 -->
+    <div class="container" id="reasons">
+        <h2>The 10 Best Reasons Why You Should Gamble!!!</h2>
+        <div class="row list">
+            <li>
+                <span class="default-text">Flexibility!</span><span class="hover-text"> Gambling allows for a flexible schedule, unlike the rigid hours of a 9-5 job.</span>
+            </li>
+            <li>
+            <span class="default-text">Potential for High Earnings!</span><span class="hover-text"> You can only lose 100% when gambling, but gain so much more.</span>
+            </li>
+            <li>
+                <span class="default-text">Excitement!</span><span class="hover-text"> Your 9-5 job won't be hitting the dopamine receptors like gambling will.</span>
+            </li>
+            <li>
+                <span class="default-text">Social Interaction!</span><span class="hover-text">Connect with other high performers over gambling instead of having to talk to your boring coworkers.</span>
+            </li>
+            <li>
+                <span class="default-text">Drinking!</span><span class="hover-text">Drinking is a huge part of gambling culture, feel free to get absolutely wasted :D.</span>
+            </li>
+            <li>
+                <span class="default-text">Skill Development!</span><span class="hover-text">Gambling can help develop skills such as strategy, risk management, and decision-making.</span>
+            </li>
+            <li>
+                <span class="default-text">Travel Opportunities!</span><span class="hover-text">There are so many casinos worldwide and with our 24/7 online service you can gamble from anywhere in the world.</span>
+            </li>
+            <li>
+                <span class="default-text">Potential for Passive Income!</span><span class="hover-text">Successful gamblers can earn money without actively working.</span>
+            </li>
+            <li>
+                <span class="default-text">Less Stress!</span><span class="hover-text">Relax as your networth grows almost by itself.</span>
+            </li>
+            <li>
+                <span class="default-text">Personal Freedom!</span><span class="hover-text">Be your own boss and make every decision on your own.</span>
+            </li>
         </div>
     </div>
-    </header>
+
+    <!-- Article 2 -->
+    <div class="container" id="dangers">
+        <h2>Dangers of Gambling</h2>
+        <img src="assets/images/censor.png" alt="Dangers of Gambling" class="dangers-image">
+    </div>
+
+    <!-- Article 3 -->
+    <div class="container" id="how-to-win">
+        <h2>How to Win at Gambling</h2>
+        <div class="row">
+            <div class="col-2">
+            <h1>Just keep at it, trust me.</h1>
+            </div>
+            <div class="col-2">
+            <img src="/assets/images/keepon.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
     <script>
         var MenuItems = document.getElementById("MenuItems");
-        
         MenuItems.style.maxHeight = "0px";
-        
-        function menutoggle(){
-            if(MenuItems.style.maxHeight == "0px"){
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight === "0px") {
                 MenuItems.style.maxHeight = "500px";
             } else {
                 MenuItems.style.maxHeight = "0px";
