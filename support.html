@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casino Support</title>
-    <link rel="stylesheet" href="assets/css/styles.css?v=1.2.2" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=1.2.3" />
     <link rel="stylesheet" href="assets/fontawesome-free-6.7.2-web/css/all.min.css">
 
 </head>
@@ -30,6 +30,78 @@
         </div>
     </div>
     </header>
+    <body>
+        <div class="container hero support-page">
+            <br><br><br>
+            <h1>🎰 Casino Support Center</h1>
+            <p>Feeling lucky... but something went wrong? We're here to help! Whether you lost your chips, your dignity, or just your login, we’ve got answers.</p>
+        </div>
+        <div class="container support-page">
+            <div class="faq">
+                <h2>🧠 Frequently Asked Questions</h2>
+                <ul>
+                    <li>
+                        <strong>“I spun the wheel and lost everything. Can I get a refund?”</strong><br>
+                        Unfortunately, no. But hey, maybe next time try betting on *yourself*.
+                    </li>
+                    <li>
+                        <strong>“The slot machine glitched!”</strong><br>
+                        Try refreshing the page. If the problem persists, blame RNGesus.
+                    </li>
+                    <li>
+                        <strong>“I forgot my password. What now?”</strong><br>
+                        Click on the "Forgot Password" link on the login page. If that fails, meditate and try to remember your 2015 email password.
+                    </li>
+                    <li>
+                        <strong>“How do I cash out?”</strong><br>
+                        You don’t. This is a student portfolio, not an actual casino.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="container support-page">
+            <div class="contact">
+                <h2>📨 Contact Us</h2>
+                <p>Still got questions? Contact our fictional support team:</p>
+                <ul>
+                    <li>Email: <a href="mailto:support@fakestudentcasino.com">support@fakestudentcasino.com</a></li>
+                    <li>Discord: <code>@SupportDealer007</code></li>
+                    <li>Office: Behind the vending machine, 2nd floor, Library Wing B</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container support-page">
+            <div class="support-form">
+                <h2>🎟️ Submit a Support Ticket</h2>
+                <form action="#" method="post">
+                    <label for="name">Your Name:</label><br>
+                    <textarea id="name" name="name" rows="1" required></textarea>
+
+                    <label for="email">Your Email:</label><br>
+                    <textarea id="mail" name="mail" rows="1" required></textarea>
+
+                    <label for="issue">Describe Your Issue:</label><br>
+                    <textarea id="issue" name="issue" rows="5" required></textarea><br><br>
+
+                    <button type="submit" class="btn">Roll the Dice (Submit)</button>
+                </form>
+            </div>
+        </div>
+    
+        <script>
+            var MenuItems = document.getElementById("MenuItems");
+            MenuItems.style.maxHeight = "0px";
+            function menutoggle(){
+                if(MenuItems.style.maxHeight == "0px"){
+                    MenuItems.style.maxHeight = "500px";
+                } else {
+                    MenuItems.style.maxHeight = "0px";
+                }
+            }
+        </script>
+    </body>
+    
     <script>
         var MenuItems = document.getElementById("MenuItems");
         

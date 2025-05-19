@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casino Account</title>
-    <link rel="stylesheet" href="assets/css/styles.css?v=1.2.2" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=1.2.3" />
     <link rel="stylesheet" href="assets/fontawesome-free-6.7.2-web/css/all.min.css">
 
 </head>
@@ -85,12 +85,24 @@
         const inputFile = document.getElementById('input-file');
         const profilePic = document.getElementById('profile-pic');
 
+        // Load the saved profile picture from localStorage on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedImage = localStorage.getItem('profilePic');
+            if (savedImage) {
+                profilePic.src = savedImage;
+            }
+        });
+
         inputFile.addEventListener('change', function() {
             const file = this.files[0];
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function(event) {
-                    profilePic.src = event.target.result;
+                    const imageData = event.target.result;
+                    profilePic.src = imageData;
+
+                    // Save the image data to localStorage
+                    localStorage.setItem('profilePic', imageData);
                 }
                 reader.readAsDataURL(file);
             }

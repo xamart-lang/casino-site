@@ -357,6 +357,7 @@ input {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.376);
 }
 
 .row.list li {
@@ -459,6 +460,47 @@ li:hover span.hover-text {
     font-style: italic;
 }
 
+/* ---------------- SUPPORT ---------------- */
+
+.faq, .support-form, .contact{
+    background: #921313 url(../images/felt_text.jpeg);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.376);
+}
+
+.support-page h1, .support-page h2 {
+    color: #ffd700;
+}
+
+.support-page ul {
+    list-style-type: square;
+    padding-left: 1.5rem;
+}
+
+.support-form input, .support-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #888;
+    background-color: #2a2a2a;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.btn {
+    background-color: #e91e63;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
 /* ---------------- MEDIA QUERIES ---------------- */
 @media only screen and (max-width: 900px) {
     nav ul {
@@ -508,3 +550,4 @@ li:hover span.hover-text {
         font-size: 14px;
     }
 }
+
