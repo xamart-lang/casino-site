@@ -30,83 +30,81 @@
         </div>
     </div>
     </header>
-    <body>
-        <div class="container hero support-page">
-            <br><br><br>
-            <h1>🎰 Casino Support Center</h1>
-            <p>Feeling lucky... but something went wrong? We're here to help! Whether you lost your chips or your login, we’ve got answers.</p>
+    <div class="container hero support-page">
+        <br><br><br>
+        <h1>🎰 Casino Support Center</h1>
+        <p>Feeling lucky... but something went wrong? We're here to help! Whether you lost your chips or your login, we’ve got answers.</p>
+    </div>
+    <div class="container support-page">
+        <div class="faq">
+            <h2>🧠 Frequently Asked Questions</h2>
+            <ul>
+                <li>
+                    <strong>“I spun the wheel and lost everything. Can I get a refund?”</strong><br>
+                    No.
+                </li>
+                <li>
+                    <strong>“The slot machine glitched!”</strong><br>
+                    Try refreshing the page. If the problem persists, try something else.
+                </li>
+                <li>
+                    <strong>“I forgot my password. What now?”</strong><br>
+                    Click on the "Forgot Password" link on the login page. If that fails, bad luck.
+                </li>
+                <li>
+                    <strong>“How do I cash out?”</strong><br>
+                    You don’t.
+                </li>
+            </ul>
         </div>
-        <div class="container support-page">
-            <div class="faq">
-                <h2>🧠 Frequently Asked Questions</h2>
-                <ul>
-                    <li>
-                        <strong>“I spun the wheel and lost everything. Can I get a refund?”</strong><br>
-                        No.
-                    </li>
-                    <li>
-                        <strong>“The slot machine glitched!”</strong><br>
-                        Try refreshing the page. If the problem persists, try something else.
-                    </li>
-                    <li>
-                        <strong>“I forgot my password. What now?”</strong><br>
-                        Click on the "Forgot Password" link on the login page. If that fails, bad luck.
-                    </li>
-                    <li>
-                        <strong>“How do I cash out?”</strong><br>
-                        You don’t.
-                    </li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="container support-page">
-            <div class="contact">
-                <h2>📨 Contact Us</h2>
-                <p>Still got questions? Contact our fictional support team:</p>
-                <ul>
-                    <li>Email: <a href="mailto:support@casino.com">support@casino.com</a></li>
-                    <li>Discord: <code>@Support</code></li>
-                    <li>Office: Max Mustermannstraße 43</li>
-                </ul>
-            </div>
-        </div>
-        <div class="container support-page">
-            <div class="support-form">
-                <h2>🎟️ Submit a Support Ticket</h2>
-                <form action="#" method="post">
-                    <label for="name">Your Name:</label><br>
-                    <textarea id="name" name="name" rows="1" required></textarea>
-
-                    <label for="email">Your Email:</label><br>
-                    <textarea id="mail" name="mail" rows="1" required></textarea>
-
-                    <label for="issue">Describe Your Issue:</label><br>
-                    <textarea id="issue" name="issue" rows="5" required></textarea><br><br>
-
-                    <button type="submit" class="btn">Complain</button>
-                </form>
-            </div>
-        </div>
+    </div>
     
-        <script>
-            var MenuItems = document.getElementById("MenuItems");
-            MenuItems.style.maxHeight = "0px";
-            function menutoggle(){
-                if(MenuItems.style.maxHeight == "0px"){
-                    MenuItems.style.maxHeight = "500px";
-                } else {
-                    MenuItems.style.maxHeight = "0px";
-                }
-            }
-        </script>
-    </body>
+    <div class="container support-page">
+        <div class="contact">
+            <h2>📨 Contact Us</h2>
+            <p>Still got questions? Contact our fictional support team:</p>
+            <ul>
+                <li>Email: <a href="mailto:support@casino.com">support@casino.com</a></li>
+                <li>Discord: <code>@Support</code></li>
+                <li>Office: Max Mustermannstraße 43</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container support-page">
+        <div class="support-form">
+            <h2>🎟️ Submit a Support Ticket</h2>
+            <form action="#" method="post" id = 'supportForm'>
+                <label for="name">Your Name:</label><br>
+                <textarea id="name" name="name" rows="1" required></textarea>
+
+                <label for="email">Your Email:</label><br>
+                <textarea id="mail" name="mail" rows="1" required></textarea>
+
+                <label for="issue">Describe Your Issue:</label><br>
+                <textarea id="issue" name="issue" rows="5" required></textarea><br><br>
+
+                <button type="submit" class="btn">Complain</button>
+            </form>
+        </div>
+    </div>
+</body>
+    <script>
+        document.getElementById('supportForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent page reload
     
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('mail').value;
+            const issue = document.getElementById('issue').value;
+    
+            alert(`Complaint submitted!\n\nName: ${name}\nEmail: ${email}\nIssue:\n${issue}`);
+            
+            // Optionally clear the form
+            this.reset();
+        });
+    </script>
     <script>
         var MenuItems = document.getElementById("MenuItems");
-        
         MenuItems.style.maxHeight = "0px";
-        
         function menutoggle(){
             if(MenuItems.style.maxHeight == "0px"){
                 MenuItems.style.maxHeight = "500px";
@@ -115,6 +113,5 @@
             }
         }
     </script>
-    
 </body>
 </html>
