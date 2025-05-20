@@ -48,13 +48,35 @@
             <div class="equipped-section">
                 <h2>Owned Cosmetics</h2>
                 <div class="scrollmenu">
-                    <div class="card">
-                        <img src="assets/images/dice/3.png" alt="Equipped Dice Skin">
-                        <p>Dice</p>
+                    <div class="card locked">
+                        <img src="assets/images/dice/1.png" alt="Dice Skin" data-id="dice1">
                     </div>
-                    <div class="card">
-                        <img src="assets/images/flairs/gold.png" alt="Equipped Flair">
-                        <p>Flair</p>
+                    <div class="card locked">
+                        <img src="assets/images/dice/2.png" alt="Dice Skin" data-id="dice2">
+                    </div>
+                    <div class="card locked">
+                        <img src="assets/images/dice/3.png" alt="Dice Skin" data-id="dice3">
+                    </div>
+                    <div class="card locked">
+                        <img src="assets/images/dice/4.png" alt="Dice Skin" data-id="dice4">
+                    </div>
+                    <div class="card locked">
+                        <img src="assets/images/dice/5.png" alt="Dice Skin" data-id="dice5">
+                    </div>
+                    <div class="card locked">
+                        <img src="assets/images/flairs/flair_1.jpg" alt="Flair" data-id="flair1">
+                    </div>
+                    <div class="card locked">
+                        <img src="assets/images/flairs/flair_2.jpg" alt="Flair" data-id="flair2">
+                    </div>
+                    <div class="card locked">
+                        <img src="assets/images/flairs/flair_3.jpg" alt="Flair" data-id="flair3">
+                    </div>
+                    <div class="card locked">
+                        <img src="assets/images/flairs/flair_4.jpg" alt="Flair" data-id="flair4">
+                    </div>
+                    <div class="card locked">
+                        <img src="assets/images/flairs/flair_5.jpg" alt="Flair" data-id="flair5">
                     </div>
                 </div>
             </div>
@@ -108,6 +130,57 @@
             }
         });
     </script>
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const boughtItems = JSON.parse(localStorage.getItem('boughtItems') || '[]');
+        
+          // Apply 'Bought' state to buttons and 'Owned' state to images on page load
+          boughtItems.forEach(id => {
+            document.querySelectorAll(`[data-id="${id}"]`).forEach(el => {
+              if (el.classList.contains('buy')) {
+                markAsBought(el);
+              } else if (el.tagName === 'IMG') {
+                markAsOwned(el);
+              }
+            });
+          });
+        
+          document.querySelectorAll('.buy').forEach(button => {
+            const id = button.dataset.id;
+        
+            button.addEventListener('click', () => {
+              if (!boughtItems.includes(id)) {
+                boughtItems.push(id);
+                localStorage.setItem('boughtItems', JSON.stringify(boughtItems));
+        
+                // Mark button and matching images
+                document.querySelectorAll(`[data-id="${id}"]`).forEach(el => {
+                  if (el.classList.contains('buy')) {
+                    markAsBought(el);
+                  } else if (el.tagName === 'IMG') {
+                    markAsOwned(el);
+                  }
+                });
+              }
+            });
+          });
+        });
+        
+        function markAsBought(button) {
+          button.textContent = 'Bought';
+          button.classList.remove('hover');
+          button.classList.add('bought');
+          button.disabled = true;
+        }
+        
+        function markAsOwned(image) {
+            const wrapper = image.closest('.locked');
+            if (wrapper) {
+                wrapper.classList.remove('locked');
+            }
+        }
+
+        </script>
+        
 </body>
 </html>

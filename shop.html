@@ -47,28 +47,28 @@
         <div class="scrollmenu">
             <!-- Example cards -->
             <div class="card hover">
-                <img src="assets/images/dice/1.png" alt="Dice Skin 1">
+                <img src="assets/images/dice/1.png" alt="Dice Skin 1" data-id="dice1">
                 <h1>Dice Skin 1</h1>
                 <p>Price: $0.99</p>
-                <button class="buy hover">Buy Now!</button>
+                <button class="buy hover" data-id="dice1">Buy Now!</button>
             </div>
             <div class="card hover">
-                <img src="assets/images/dice/2.png" alt="Dice Skin 1">
+                <img src="assets/images/dice/2.png" alt="Dice Skin 2" data-id="dice2">
                 <h1>Dice Skin 2</h1>
                 <p>Price: $0.99</p>
-                <button class="buy hover">Buy Now!</button>
+                <button class="buy hover" data-id="dice2">Buy Now!</button>
             </div>
             <div class="card hover">
-                <img src="assets/images/dice/3.png" alt="Dice Skin 1">
+                <img src="assets/images/dice/3.png" alt="Dice Skin 3" data-id="dice3">
                 <h1>Dice Skin 3</h1>
                 <p>Price: $0.99</p>
-                <button class="buy hover">Buy Now!</button>
+                <button class="buy hover" data-id="dice3">Buy Now!</button>
             </div>
             <div class="card hover">
-                <img src="assets/images/dice/4.png" alt="Dice Skin 1">
+                <img src="assets/images/dice/4.png" alt="Dice Skin 4" data-id="dice4">
                 <h1>Dice Skin 4</h1>
                 <p>Price: $0.99</p>
-                <button class="buy hover">Buy Now!</button>
+                <button class="buy hover" data-id="dice4">Buy Now!</button>
             </div>
         </div>
     </div>
@@ -78,34 +78,34 @@
         <h2 class="title">Flairs & Badges</h2>
         <div class="scrollmenu">
             <div class="card hover">
-                <img src="assets/images/flairs/flair_1.jpg" alt="Gold Flair">
+                <img src="assets/images/flairs/flair_1.jpg" alt="Gold Flair" data-id="flair1">
                 <h1>Star Flair 1</h1>
                 <p>Price: $1.49</p>
-                <button class="buy hover">Buy Now!</button>
+                <button class="buy hover" data-id="flair1">Buy Now!</button>
             </div>
             <div class="card hover">
-                <img src="assets/images/flairs/flair_2.jpg" alt="Gold Flair">
+                <img src="assets/images/flairs/flair_2.jpg" alt="Gold Flair" data-id="flair2">
                 <h1>Star Flair 2</h1>
                 <p>Price: $1.49</p>
-                <button class="buy hover">Buy Now!</button>
+                <button class="buy hover" data-id="flair2">Buy Now!</button>
             </div>
             <div class="card hover">
-                <img src="assets/images/flairs/flair_3.jpg" alt="Gold Flair">
+                <img src="assets/images/flairs/flair_3.jpg" alt="Gold Flair" data-id="flair3">
                 <h1>Star Flair 3</h1>
                 <p>Price: $1.49</p>
-                <button class="buy hover">Buy Now!</button>
+                <button class="buy hover" data-id="flair3">Buy Now!</button>
             </div>
             <div class="card hover">
-                <img src="assets/images/flairs/flair_4.jpg" alt="Gold Flair">
+                <img src="assets/images/flairs/flair_4.jpg" alt="Gold Flair" data-id="flair4">
                 <h1>Star Flair 4</h1>
                 <p>Price: $1.49</p>
-                <button class="buy hover">Buy Now!</button>
+                <button class="buy hover" data-id="flair4">Buy Now!</button>
             </div>
             <div class="card hover">
-                <img src="assets/images/flairs/flair_5.jpg" alt="Gold Flair">
+                <img src="assets/images/flairs/flair_5.jpg" alt="Gold Flair" data-id="flair5">
                 <h1>Star Flair 5</h1>
                 <p>Price: $1.49</p>
-                <button class="buy hover">Buy Now!</button>
+                <button class="buy hover" data-id="flair5">Buy Now!</button>
             </div>
         </div>
     </div>
@@ -123,5 +123,33 @@
             }
         }
     </script>
+    <script>
+     document.addEventListener('DOMContentLoaded', () => {
+        const boughtItems = JSON.parse(localStorage.getItem('boughtItems') || '[]');
+      
+        document.querySelectorAll('.buy').forEach(button => {
+          const id = button.dataset.id; // Ensure every button has a unique data-id
+          if (boughtItems.includes(id)) {
+            markAsBought(button);
+          }
+      
+          button.addEventListener('click', () => {
+            if (!boughtItems.includes(id)) {
+              boughtItems.push(id);
+              localStorage.setItem('boughtItems', JSON.stringify(boughtItems));
+              markAsBought(button);
+            }
+          });
+        });
+      });
+      
+      function markAsBought(button) {
+        button.textContent = 'Bought';
+        button.classList.remove('hover');
+        button.classList.add('bought');
+        button.disabled = true; // Optional: disables the button
+      }
+    </script>
+      
 </body>
 </html>

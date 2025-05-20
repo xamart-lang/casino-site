@@ -185,6 +185,20 @@ button:hover, .popup-box button:hover {
     color: red;
 }
 
+.bought {
+    background-color: #4CAF50; /* Green background */
+    color: white;              /* White text */
+    cursor: default;
+}
+  
+.bought:hover {
+    background-color: #4CAF50; /* Prevent hover effect from changing it */
+}
+  
+.locked {
+    display: none;
+}
+
 /* ---------------- HOVER EFFECTS ---------------- */
 .hover:hover {
     transform: scale(1.05);
@@ -471,6 +485,7 @@ li:hover span.hover-text {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    overflow: hidden;
     padding: 20px;
     box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.376);
 }
